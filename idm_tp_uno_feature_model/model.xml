@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendposition" value="268,19"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="idm_uno_feature_model">
+			<alt abstract="true" mandatory="true" name="rules">
+				<feature name="original"/>
+				<or name="variants">
+					<feature name="challenge"/>
+					<or name="cards_effects">
+						<feature name="cards_0_switch_all_hands"/>
+						<feature name="cards_7_switch_hands_with_a_player"/>
+					</or>
+					<feature name="interception"/>
+					<alt name="cumulating_malus">
+						<feature name="only_for_malus_2"/>
+						<feature name="only_for_malus_4"/>
+						<feature name="malus_2_and_4_can_be_cumulated"/>
+					</alt>
+					<feature name="hands_down"/>
+					<feature name="without_malus"/>
+				</or>
+			</alt>
+			<feature name="two_players"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>challenge</var>
+				<not>
+					<var>two_players</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>without_malus</var>
+				<not>
+					<var>cumulating_malus</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

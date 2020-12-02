@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="idm_uno_feature_model"/>
+	<feature automatic="selected" name="rules"/>
+	<feature automatic="unselected" name="original"/>
+	<feature automatic="selected" name="variants"/>
+	<feature manual="selected" name="challenge"/>
+	<feature name="cards_effects"/>
+	<feature name="cards_0_switch_all_hands"/>
+	<feature name="cards_7_switch_hands_with_a_player"/>
+	<feature name="interception"/>
+	<feature name="cumulating_malus"/>
+	<feature name="only_for_malus_2"/>
+	<feature name="only_for_malus_4"/>
+	<feature name="malus_2_and_4_can_be_cumulated"/>
+	<feature name="hands_down"/>
+	<feature name="without_malus"/>
+	<feature automatic="unselected" name="two_players"/>
+</configuration>
