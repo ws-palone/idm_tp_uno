@@ -1,0 +1,46 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Uno:
+    'UNO' 'game' game=ID '{' rules=Rules '}';
+
+Rules:
+    'Rules' '{' (Original | (variants+=Variant+Coma)+) '}';
+
+Coma:
+    ','
+;
+
+Original:
+    'Original'
+;
+
+Variant:
+    Challenge | CardsEffect | Interception | CumulatingMalus | HandsDown | WithoutMalus
+;
+
+Challenge:
+    'Challenge'
+;
+
+CardsEffect:
+    'CardsEffect:' + ('card0' | 'card7' | 'card0AndCard7')
+;
+
+Interception:
+    'Interception'
+;
+
+CumulatingMalus:
+    'CumulatingMalus:' + ('onlyPlus2' | 'onlyPlus4' | 'plus2AndPlus4')
+;
+
+HandsDown:
+    'HandsDown'
+;
+
+WithoutMalus:
+    'WithoutMalus'
+;
+
