@@ -67,7 +67,7 @@ WithoutMalus:
 Les règles de base du uno:
 
 ```
-UNO game:game1 numberOfPlayer:4 {
+UNO game:game1 numberOfPlayers:4 {
     Rules {
         Original
     }
@@ -77,7 +77,7 @@ UNO game:game1 numberOfPlayer:4 {
 Exemple avec quelques variantes du uno:
 
 ```
-UNO game:game1 numberOfPlayer:4 {
+UNO game:game1 numberOfPlayers:4 {
     Rules {
         Challenge;
         CardsEffect:
