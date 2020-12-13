@@ -23,13 +23,13 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Uno:
-    'UNO' 'game' game=ID '{' rules=Rules '}';
+    'UNO' 'game:' game=ID 'numberOfPlayers:'? nop=INT? '{' rules=Rules '}';
 
 Rules:
-    'Rules' '{' (Original | (variants+=Variant+Coma)+) '}';
+    'Rules' '{' (Original | (variants+=Variant+Semicolon)+) '}';
 
-Coma:
-    ',';
+Semicolon:
+    ';';
 
 Original:
     'Original';
@@ -41,13 +41,19 @@ Challenge:
     'Challenge';
 
 CardsEffect:
-    'CardsEffect:' + ('card0' | 'card7' | 'card0AndCard7');
+    'CardsEffect:' '(' (effects+=Effect+Semicolon?)+ ')';
+
+Effect:
+    ('card0' | 'card7');
 
 Interception:
     'Interception';
 
 CumulatingMalus:
-    'CumulatingMalus:' + ('onlyPlus2' | 'onlyPlus4' | 'plus2AndPlus4');
+    'CumulatingMalus:' '(' (malus+=Malus+Semicolon?)+ ')';
+
+Malus:
+    ('+2' | '+4');
 
 HandsDown:
     'HandsDown';
@@ -61,23 +67,23 @@ WithoutMalus:
 Les règles de base du uno:
 
 ```
-UNO game règleDeBase {
-  Rules {
-    Original
-  }
+UNO game:game1 numberOfPlayer:4 {
+    Rules {
+        Original
+    }
 }
 ```
 
-Des variantes du uno:
+Exemple avec quelques variantes du uno:
 
 ```
-UNO game variants {
-  Rules {
-    Challenge,
-    CardEffects:card0,
-    Interception,
-    CumulatingMalus:onlyPlus2,
-  }
+UNO game:game1 numberOfPlayer:4 {
+    Rules {
+        Challenge;
+        CardsEffect:
+            (card0; card7;);
+        Interception;
+    }
 }
 ```
 
