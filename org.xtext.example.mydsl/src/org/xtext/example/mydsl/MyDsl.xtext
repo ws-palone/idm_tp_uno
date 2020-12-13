@@ -9,45 +9,34 @@ Rules:
     'Rules' '{' (Original | (variants+=Variant+Semicolon)+) '}';
 
 Semicolon:
-    ';'
-;
+    ';';
 
 Original:
-    'Original'
-;
+    'Original'+Semicolon;
 
 Variant:
-    Challenge | CardsEffect | Interception | CumulatingMalus | HandsDown | WithoutMalus
-;
+    Challenge | CardsEffect | Interception | CumulatingMalus | HandsDown | WithoutMalus;
 
 Challenge:
-    'Challenge'
-;
+    'Challenge';
 
 CardsEffect:
-    'CardsEffect:' '(' (effects+=Effect+Semicolon?)+ ')'
-;
+    'CardsEffect:' '(' (effects+=Effect+Semicolon?)+ ')';
 
 Effect:
-    ('card0' | 'card7')
-;
+    ('card0' | 'card7');
 
 Interception:
-    'Interception'
-;
+    'Interception';
 
 CumulatingMalus:
-    'CumulatingMalus:' '(' (malus+=Malus+Semicolon?)+ ')'
-;
+    'CumulatingMalus:' '(' (malus+=Malus+Semicolon?)+ ')';
 
 Malus:
-    ('+2' | '+4')
-;
+    ('+2' | '+4');
 
 HandsDown:
-    'HandsDown'
-;
+    'HandsDown';
 
 WithoutMalus:
-    'WithoutMalus'
-;
+    'WithoutMalus';
