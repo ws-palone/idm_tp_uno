@@ -23,43 +23,43 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Uno:
-    'UNO' 'game:' game=ID 'numberOfPlayers:'? nop=INT? '{' rules=Rules '}';
+    'UNO' 'game:' game=ID 'numberOfPlayers:' players=INT '{' rules=Rules '}';
 
 Rules:
-    'Rules' '{' (Original | (variants+=Variant+Semicolon)+) '}';
+    'Rules' '{' ((Original  Semicolon) | (variants+=Variant+Semicolon)+) '}';
 
 Semicolon:
     ';';
 
 Original:
-    'Original';
+    original = 'Original';
 
 Variant:
     Challenge | CardsEffect | Interception | CumulatingMalus | HandsDown | WithoutMalus;
 
 Challenge:
-    'Challenge';
+    challenge = 'Challenge' 'numberOfPoints='? points=INT?;
 
 CardsEffect:
     'CardsEffect:' '(' (effects+=Effect+Semicolon?)+ ')';
 
 Effect:
-    ('card0' | 'card7');
+    (card0 = 'card0' | card7 = 'card7');
 
 Interception:
-    'Interception';
+    interception = 'Interception';
 
 CumulatingMalus:
     'CumulatingMalus:' '(' (malus+=Malus+Semicolon?)+ ')';
 
 Malus:
-    ('+2' | '+4');
+    (plus2 = '+2' | plus4 = '+4');
 
 HandsDown:
-    'HandsDown';
+    handsdown = 'HandsDown';
 
 WithoutMalus:
-    'WithoutMalus';
+    withoutMalus = 'WithoutMalus';
 ```
 
 #### Exemples d'application de la grammaire
@@ -79,7 +79,7 @@ Exemple avec quelques variantes du uno:
 ```
 UNO game:game1 numberOfPlayers:4 {
     Rules {
-        Challenge;
+        Challenge numberOfPoints=600;
         CardsEffect:
             (card0; card7;);
         Interception;
