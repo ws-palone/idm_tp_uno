@@ -86,6 +86,8 @@ UNO game:game1 numberOfPlayers:4 {
     }
 }
 ```
+note: Ici les contraintes présentes dans le feature model ne sont pas exprimées.
+
 
 ## Json Schema
 
@@ -137,3 +139,12 @@ Une configuration fausse:
 
 //Required properties are missing from object: numberOfPlayers.
 ```
+## Questions :
+
+#### Q4: On souhaite écrire un générateur de règles Uno (pour fournir à des joueurs en début de partie, par exemple pour éviter tout conflit). Comment développeriez-vous ce générateur avec le FM de la Q1, le DSL de la Q2, et le JSON de la Q3?
+- Pour le FM il est possible de développer un programme avec un parser XML Java comme JDOM par exemple. En ajoutant une configuration du feature model en entrée de ce programme celui serait capable d'extraire les informations de chaque feature pour en générer le texte décrivant la règle associée. Le texte peut être générer dans un fichier texte extérieur pour en faciliter la lecture et conserver une trace des règles pour une configuration précise.
+- Pour le DSL il faut développer un parser de ce DSL car il n'existe pas d'outils permettant d'extraire la donnée d'un language que l'on a créé. Une fois cette étape effectué nous pouvons suivre la même démarche que pour le FM à savoir générer le texte des règles avec un programme à partir des données extraites de la configuration du DSL.
+- Pour le JSON on peut facilement utiliser des librairies java ou même python pour extraire les données que l'on souhaite du fichier de configuration json. Il faut ensuite générer du texte à l'aide d'un programme et le sauvegarder dans un fichier extérieur comme pour le FM.
+
+#### Q5: On souhaite transformer un programme écrit dans votre DSL (cf Q2) en fichier JSON (et vice-versa). Comment développeriez-vous cette transformation? 
+Pour développer cette transformation il faut créer un compilateur qui se chargera de convertir chaque élément de mon language DSL en élément Json et inversement. Pour ce faire il faut déjà avoir un DSL et un json schema qui puissent contenir exactement les mêmes paramètres pour garantir qu'une convertion reconvertit dans son language initial soit identique. 
