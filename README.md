@@ -69,7 +69,7 @@ Les règles de base du uno:
 ```
 UNO game:game1 numberOfPlayers:4 {
     Rules {
-        Original
+        Original;
     }
 }
 ```
