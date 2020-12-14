@@ -1,0 +1,7 @@
+{
+    "Uno": {
+        "gameId": "game mode 1"
+    }
+}
+
+//Required properties are missing from object: numberOfPlayers.

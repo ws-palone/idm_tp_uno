@@ -1,0 +1,257 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "Uno": {
+        "gameId": "game mode 1",
+        "numberOfPlayers": 5,
+        "Variants": {
+          "Challenge": {
+            "points": 500
+          },
+          "CardsEffect": {
+            "card0": true,
+            "card7": true
+          },
+          "Intercepetion": true,
+          "CumulatingMalus": {
+            "plus2": true,
+            "plus4": false
+          },
+          "HandsDown": true,
+          "WithoutMalus": false
+        }
+      }
+    }
+  ],
+  "required": [
+    "Uno"
+  ],
+  "properties": {
+    "Uno": {
+      "$id": "#/properties/Uno",
+      "type": "object",
+      "title": "The Uno schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "gameId": "game mode 1",
+          "numberOfPlayers": 5,
+          "Variants": {
+            "Challenge": {
+              "points": 500
+            },
+            "CardsEffect": {
+              "card0": true,
+              "card7": true
+            },
+            "Intercepetion": true,
+            "CumulatingMalus": {
+              "plus2": true,
+              "plus4": false
+            },
+            "HandsDown": true,
+            "WithoutMalus": false
+          }
+        }
+      ],
+      "required": [
+        "gameId",
+        "numberOfPlayers"
+      ],
+      "properties": {
+        "gameId": {
+          "$id": "#/properties/Uno/properties/gameId",
+          "type": "string",
+          "title": "The gameId schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "game mode 1"
+          ]
+        },
+        "numberOfPlayers": {
+          "$id": "#/properties/Uno/properties/numberOfPlayers",
+          "type": "integer",
+          "title": "The numberOfPlayers schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            5
+          ]
+        },
+        "Variants": {
+          "$id": "#/properties/Uno/properties/Variants",
+          "type": "object",
+          "title": "The Variants schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "Challenge": {
+                "points": 500
+              },
+              "CardsEffect": {
+                "card0": true,
+                "card7": true
+              },
+              "Intercepetion": true,
+              "CumulatingMalus": {
+                "plus2": true,
+                "plus4": false
+              },
+              "HandsDown": true,
+              "WithoutMalus": false
+            }
+          ],
+          "required": [
+          ],
+          "properties": {
+            "Challenge": {
+              "$id": "#/properties/Uno/properties/Variants/properties/Challenge",
+              "type": "object",
+              "title": "The Challenge schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "points": 500
+                }
+              ],
+              "required": [
+              ],
+              "properties": {
+                "points": {
+                  "$id": "#/properties/Uno/properties/Variants/properties/Challenge/properties/points",
+                  "type": "integer",
+                  "title": "The points schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    500
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            "CardsEffect": {
+              "$id": "#/properties/Uno/properties/Variants/properties/CardsEffect",
+              "type": "object",
+              "title": "The CardsEffect schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "card0": true,
+                  "card7": true
+                }
+              ],
+              "required": [
+              ],
+              "properties": {
+                "card0": {
+                  "$id": "#/properties/Uno/properties/Variants/properties/CardsEffect/properties/card0",
+                  "type": "boolean",
+                  "title": "The card0 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "card7": {
+                  "$id": "#/properties/Uno/properties/Variants/properties/CardsEffect/properties/card7",
+                  "type": "boolean",
+                  "title": "The card7 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            "Intercepetion": {
+              "$id": "#/properties/Uno/properties/Variants/properties/Intercepetion",
+              "type": "boolean",
+              "title": "The Intercepetion schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "CumulatingMalus": {
+              "$id": "#/properties/Uno/properties/Variants/properties/CumulatingMalus",
+              "type": "object",
+              "title": "The CumulatingMalus schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "plus2": true,
+                  "plus4": false
+                }
+              ],
+              "required": [
+              ],
+              "properties": {
+                "plus2": {
+                  "$id": "#/properties/Uno/properties/Variants/properties/CumulatingMalus/properties/plus2",
+                  "type": "boolean",
+                  "title": "The plus2 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "plus4": {
+                  "$id": "#/properties/Uno/properties/Variants/properties/CumulatingMalus/properties/plus4",
+                  "type": "boolean",
+                  "title": "The plus4 schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    false
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            "HandsDown": {
+              "$id": "#/properties/Uno/properties/Variants/properties/HandsDown",
+              "type": "boolean",
+              "title": "The HandsDown schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "WithoutMalus": {
+              "$id": "#/properties/Uno/properties/Variants/properties/WithoutMalus",
+              "type": "boolean",
+              "title": "The WithoutMalus schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,11 @@
+{
+    "Uno": {
+        "gameId": "game mode 1",
+        "numberOfPlayers": 5,
+        "Variants": {
+          	"Intercepetion": true,
+          	"CumulatingMalus": {
+          	}
+        }
+    }
+}

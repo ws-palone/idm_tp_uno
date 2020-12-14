@@ -1,0 +1,22 @@
+{
+    "Uno": {
+        "gameId": "game mode 1",
+        "numberOfPlayers": 5,
+        "Variants": {
+            "Challenge": {
+                "points": 500
+            },
+            "CardsEffect": {
+                "card0": true,
+                "card7": true
+            },
+            "Intercepetion": true,
+            "CumulatingMalus": {
+                "plus2": true,
+                "plus4": false
+            },
+            "HandsDown": true,
+            "WithoutMalus": false
+        }
+    }
+}
