@@ -87,4 +87,53 @@ UNO game:game1 numberOfPlayers:4 {
 }
 ```
 
+## Json Schema
 
+#### Le schema json est disponible dans le dossier jsonSchema de ce projet. Voici des exemples de configurations possibles:
+
+La configuration permettant de jouer au jeu de base (on n'ajoute pas de variantes):
+```
+{
+    "Uno": {
+        "gameId": "game mode 1",
+        "numberOfPlayers": 5
+    }
+}
+```
+
+Une configuration avec différentes variantes:
+```
+{
+    "Uno": {
+        "gameId": "game mode 1",
+        "numberOfPlayers": 5,
+        "Variants": {
+            "Challenge": {
+                "points": 500
+            },
+            "CardsEffect": {
+                "card0": true,
+                "card7": true
+            },
+            "Intercepetion": true,
+            "CumulatingMalus": {
+                "plus2": true,
+                "plus4": false
+            },
+            "HandsDown": true,
+            "WithoutMalus": false
+        }
+    }
+}
+```
+
+Une configuration fausse:
+```
+{
+    "Uno": {
+        "gameId": "game mode 1"
+    }
+}
+
+//Required properties are missing from object: numberOfPlayers.
+```
